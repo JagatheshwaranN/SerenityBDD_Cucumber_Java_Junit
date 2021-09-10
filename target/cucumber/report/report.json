@@ -1,0 +1,113 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-09-10T04:41:27.478Z",
+        "line": 14,
+        "name": "Verify user able to login to Orange HRM",
+        "description": "",
+        "id": "login-functionality;verify-user-able-to-login-to-orange-hrm;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 9534907700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on Orange HRM login page",
+            "match": {
+              "location": "qa.jtaf.serenity.steps.OrangeHRMStepDefinitions.user_is_on_orange_hrm_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 882745600,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enters username \"Admin\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Admin\"",
+                  "offset": 21
+                }
+              ],
+              "location": "qa.jtaf.serenity.steps.OrangeHRMStepDefinitions.user_enters_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 572424500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user enters password \"admin123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"admin123\"",
+                  "offset": 21
+                }
+              ],
+              "location": "qa.jtaf.serenity.steps.OrangeHRMStepDefinitions.user_enters_password(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5116004900,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user clicks login button",
+            "match": {
+              "location": "qa.jtaf.serenity.steps.OrangeHRMStepDefinitions.user_clicks_login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 232386600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Orange HRM dashboard page should open",
+            "match": {
+              "location": "qa.jtaf.serenity.steps.OrangeHRMStepDefinitions.orange_hrm_dashboard_page_should_open()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag"
+          },
+          {
+            "name": "@tag2"
+          }
+        ]
+      }
+    ],
+    "name": "Login Functionality",
+    "description": "",
+    "id": "login-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/LoginToOrangeHRM.feature",
+    "tags": [
+      {
+        "name": "@tag",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

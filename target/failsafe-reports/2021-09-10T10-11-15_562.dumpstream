@@ -1,0 +1,4 @@
+# Created at 2021-09-10T10:11:23.189
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Eclipse_Env\Workspace\SerenityBDDCucumberJunit\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
