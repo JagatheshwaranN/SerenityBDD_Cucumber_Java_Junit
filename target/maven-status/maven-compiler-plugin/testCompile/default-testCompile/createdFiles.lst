@@ -1,6 +1,0 @@
-qa\jtaf\serenity\pages\DashboardPage.class
-qa\jtaf\serenity\runner\CucumberTestSuite.class
-qa\jtaf\serenity\pages\HomePage.class
-qa\jtaf\serenity\steps\OrangeHRMStepDefinitions.class
-qa\jtaf\serenity\step\DashboardPageStep.class
-qa\jtaf\serenity\step\HomePageStep.class
