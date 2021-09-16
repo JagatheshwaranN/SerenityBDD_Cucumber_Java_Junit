@@ -1,2 +1,8 @@
-11-09-2021 18:09:412 INFO  HomePage :26 - The login method execution started
-11-09-2021 18:09:412 INFO  HomePage :30 - The login method execution ended
+16-09-2021 09:09:124 INFO  HomePage :45 - FAILED ***** : Verify user able to login to Open Cart Application
+16-09-2021 09:09:179 INFO  HomePage :53 - PASSED ***** : Verify user able to login to Open Cart Application
+16-09-2021 09:09:998 INFO  HomePage :53 - PASSED ***** : Verify user able to login to Open Cart Application
+16-09-2021 09:09:76 INFO  HomePage :53 - PASSED ***** : Verify user able to login to Open Cart Application
+16-09-2021 09:09:699 INFO  HomePage :53 - PASSED ***** : Verify user able to login to Open Cart Application
+16-09-2021 09:09:109 INFO  HomePage :53 - PASSED ***** : Verify user able to login to Open Cart Application
+16-09-2021 09:09:719 INFO  HomePage :53 - PASSED ***** : Verify user able to login to Open Cart Application
+16-09-2021 09:09:553 INFO  HomePage :53 - PASSED ***** : Verify user able to login to Open Cart Application

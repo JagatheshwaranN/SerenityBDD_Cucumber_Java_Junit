@@ -22,11 +22,11 @@ public class FileReaderUtility {
 	private static FileInputStream fileInputStream;
 
 	private static String propertyFilePath = "//src//main//resources//configurations//";
-	private static String testConfigFile = "TestConfig.properties";
+	private static String testConfigFile = "testdata.properties";
 
 	private static Logger log = LoggerUtility.getLog(FileReaderUtility.class);
 
-	public void loadPropertyFile() throws IOException {
+	public static void loadPropertyFile() throws IOException {
 		try {
 			properties = new Properties();
 			file = new File(System.getProperty("user.dir") + propertyFilePath + testConfigFile);

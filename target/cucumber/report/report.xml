@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="37.272">
-<testcase classname="Login Functionality" name="Verify user able to login to Orange HRM" time="31.103">
-<system-out><![CDATA[Given user is on Orange HRM login page......................................passed
-When user login with username "Admin" and password "admin123"...............passed
-Then Orange HRM dashboard page should open..................................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="18.417">
+<testcase classname="Login Functionality" name="Verify user able to login to Open Cart Application" time="17.13">
+<system-out><![CDATA[Given user is on Open Cart home page........................................passed
+When user navigate to Open Cart login page from MyAccount flyout............passed
+And user login with username "app.username" and password "app.password".....passed
+Then Open Cart account page should open.....................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
