@@ -7,6 +7,8 @@ Feature: Place Order Functionality
     When user navigate to Open Cart login page from MyAccount flyout
     And user login with username "<username>" and password "<password>"
     Then Open Cart account page should open
+    And user navigate to Open Cart home page from account page
+    
 
     Examples: 
       | username     | password     |

@@ -32,11 +32,38 @@ public class HomePage extends PageObject {
 	@FindBy(xpath = "//nav[@class='navbar']")
 	WebElement CategoriesNavigationBar;
 	
+	@FindBy(xpath = "//input[@name='search']")
+	WebElement SearchBar;
+	
+	@FindBy(xpath = "//button[@class='btn btn-default btn-lg']")
+	WebElement SearchButton;
+	
+	@FindBy(xpath = "//div[@id='content']//h1[contains(text(),'Search')]")
+	WebElement SearchResultHeader;
+	
+	@FindBy(xpath = "(//button[@type='button']//span[contains(@class,'hidden-xs hidden-sm hidden-md')])[1]")
+	WebElement AddToCartButton;
+	
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement AddToCartSuccessMessage;
+
+	@FindBy(xpath = "//button[@type='button']//i[@class='fa fa-shopping-cart']")
+	WebElement ShoppingCartIcon;
+	
+	@FindBy(xpath = "//ul[@class='dropdown-menu pull-right']")
+	WebElement ShoppingCartViewDrop;
+	
+	@FindBy(xpath = "//a//Strong[contains(text(),'View Cart')]")
+	WebElement ViewCartButton;
+	
+	@FindBy(xpath = "//a//Strong[contains(text(),'Checkout')]")
+	WebElement CheckoutButton;
+	
 	@Before
 	public void setup() throws IOException {
 		FileReaderUtility.loadPropertyFile();
 	}
-	
+		
 	@After
 	public void after(Scenario scenario) {
 		try {
