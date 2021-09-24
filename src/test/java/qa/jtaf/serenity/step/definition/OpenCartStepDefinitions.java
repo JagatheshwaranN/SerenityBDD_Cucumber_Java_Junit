@@ -88,4 +88,24 @@ public class OpenCartStepDefinitions {
 		shoppingCartPageStep.verifyShoppingCartProductDetails();
 	}
 
+	@Then("user remove the product from shopping cart")
+	public void user_remove_product_from_shopping_cart() {
+		shoppingCartPageStep.verifyShoppingCartProductRemove();
+	}
+
+	@When("user navigate to Open Cart checkout page")
+	public void user_navigate_to_open_cart_checkout_page() {
+
+	}
+
+	@When("user enters the checkout billing, delivery, payment details {string} and place order")
+	public void user_enters_the_checkout_billing_delivery_payment_details_and_place_order(String string) {
+
+	}
+
+	@Then("place order success message should display")
+	public void place_order_success_message_should_display() {
+
+	}
+
 }

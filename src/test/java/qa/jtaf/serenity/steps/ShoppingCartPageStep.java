@@ -17,4 +17,9 @@ public class ShoppingCartPageStep {
 		shoppingCartPage.validateShoppingCartSection();
 	}
 
+	@Step("Verify Product details removed from shopping cart")
+	public void verifyShoppingCartProductRemove() {
+		shoppingCartPage.validateRemoveProduct();
+	}
+	
 }

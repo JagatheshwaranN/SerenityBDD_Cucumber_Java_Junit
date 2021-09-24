@@ -8,8 +8,17 @@ Feature: Place Order Functionality
     And user login with username "<username>" and password "<password>"
     Then Open Cart account page should open
     And user navigate to Open Cart home page from account page
-    
+    And user search for product "<product>"
+    When user clicks Add to cart button
+    Then Open Cart product detail page should open
+    And user add product to shopping cart
+    When user navigate to Open Cart shopping cart page from product view drop
+    Then Open Cart shopping cart page should open
+    And user verify the product details in shopping cart
+    When user navigate to Open Cart checkout page
+    And user enters the checkout billing, delivery, payment details "<checkoutDetails>" and place order
+    Then place order success message should display
 
     Examples: 
-      | username     | password     |
-      | app.username | app.password |
+      | username     | password     | product     | checkoutDetails |
+      | app.username | app.password | item.search |                 |

@@ -30,7 +30,10 @@ public class ShoppingCartPage extends PageObject {
 
 	@FindBy(xpath = "(//div[@class='table-responsive']//tbody//td[@class='text-right'])[2]")
 	WebElement ProductTotal;
-
+	
+	@FindBy(xpath = "//button[@data-original-title='Remove']")
+	WebElement RemoveProduct;
+	
 	@FindBy(xpath = "//h4[@class='panel-title']//a[@href='#collapse-coupon']")
 	WebElement UseCouponCodeSection;
 
@@ -65,6 +68,11 @@ public class ShoppingCartPage extends PageObject {
 		shouldBeVisible(ShippingAndTaxesSection);
 		shouldBeVisible(UseGiftCertificateSection);
 		shouldBeVisible(TotalSection);
+	}
+	
+	public void validateRemoveProduct() {
+		shouldBeVisible(RemoveProduct);
+		clickOn(RemoveProduct);
 	}
 	
 	public void navigateToCheckoutPage() {

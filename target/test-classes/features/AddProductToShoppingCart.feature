@@ -2,7 +2,7 @@
 Feature: Shopping Cart Functionality
 
   @shoppingcart
-  Scenario Outline: Verify user able to place order in Open Cart application
+  Scenario Outline: Verify user able to add product to shopping cart in Open Cart application
     Given user is on Open Cart home page
     When user navigate to Open Cart login page from MyAccount flyout
     And user login with username "<username>" and password "<password>"
