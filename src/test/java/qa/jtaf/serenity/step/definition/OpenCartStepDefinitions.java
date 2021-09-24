@@ -7,6 +7,8 @@ import net.thucydides.core.annotations.Steps;
 import qa.jtaf.serenity.steps.AccountPageStep;
 import qa.jtaf.serenity.steps.HomePageStep;
 import qa.jtaf.serenity.steps.LoginPageStep;
+import qa.jtaf.serenity.steps.ProductDetailPageStep;
+import qa.jtaf.serenity.steps.ShoppingCartPageStep;
 
 public class OpenCartStepDefinitions {
 
@@ -18,6 +20,12 @@ public class OpenCartStepDefinitions {
 
 	@Steps
 	AccountPageStep accountPageStep;
+
+	@Steps
+	ProductDetailPageStep productDetailPageStep;
+
+	@Steps
+	ShoppingCartPageStep shoppingCartPageStep;
 
 	@Given("user is on Open Cart home page")
 	public void user_is_on_open_cart_home_page() {
@@ -37,6 +45,47 @@ public class OpenCartStepDefinitions {
 	@Then("Open Cart account page should open")
 	public void open_cart_account_page_should_open() {
 		accountPageStep.verifyAccountPageOpen();
+	}
+
+	@Then("user navigate to Open Cart home page from account page")
+	public void user_navigate_to_open_cart_home_page_from_account_page() {
+		accountPageStep.verifyNavToHome();
+		homePageStep.verifyHomePageOpen();
+	}
+
+	@Then("user search for product {string}")
+	public void user_search_for_product(String product) {
+		homePageStep.verifyProductSearch(product);
+	}
+
+	@When("user clicks Add to cart button")
+	public void user_clicks_add_to_cart_button() {
+		homePageStep.verifyProductAddToCart();
+	}
+
+	@Then("Open Cart product detail page should open")
+	public void open_cart_product_detail_page_should_open() {
+		productDetailPageStep.verifyProductDetailPageOpen();
+	}
+
+	@Then("user add product to shopping cart")
+	public void user_add_product_to_shopping_cart() {
+		productDetailPageStep.verifyAddProductToCart();
+	}
+
+	@When("user navigate to Open Cart shopping cart page from product view drop")
+	public void user_navigate_to_open_cart_shopping_cart_page_from_product_view_drop() {
+		productDetailPageStep.verifyNavToCart();
+	}
+
+	@Then("Open Cart shopping cart page should open")
+	public void open_cart_shopping_cart_page_should_open() {
+		shoppingCartPageStep.verifyShoppingCartPageOpen();
+	}
+
+	@Then("user verify the product details in shopping cart")
+	public void user_verify_the_product_details_in_shopping_cart() {
+		shoppingCartPageStep.verifyShoppingCartProductDetails();
 	}
 
 }

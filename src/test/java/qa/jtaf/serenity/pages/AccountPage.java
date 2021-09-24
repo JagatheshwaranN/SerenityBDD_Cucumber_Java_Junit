@@ -20,5 +20,9 @@ public class AccountPage extends PageObject {
 		shouldBeVisible(MyAccountBreadcrumb);
 		shouldBeVisible(MyAccountHeader);
 	}
+	
+	public void navigateToHomePage() {
+		clickOn(HomeBreadcrumb);
+	}
 
 }

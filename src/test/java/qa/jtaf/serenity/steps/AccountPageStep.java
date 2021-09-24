@@ -7,9 +7,14 @@ public class AccountPageStep {
 	
 	AccountPage accountPage;
 	
-	@Step("Open Cart Account Page should open")
+	@Step("Open Cart account page header should display")
 	public void verifyAccountPageOpen() {
 		accountPage.validateAccountPageHeader();
+	}
+
+	@Step("Navigate to Open Cart home page")
+	public void verifyNavToHome() {
+		accountPage.navigateToHomePage();
 	}
 
 }
