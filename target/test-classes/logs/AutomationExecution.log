@@ -13,3 +13,10 @@
 23-09-2021 10:09:755 INFO  LoginPage :65 - PASSED ***** : Verify user able to place order in Open Cart application
 23-09-2021 10:09:209 INFO  LoginPage :57 - FAILED ***** : Verify user able to place order in Open Cart application
 23-09-2021 10:09:995 INFO  LoginPage :65 - PASSED ***** : Verify user able to place order in Open Cart application
+24-09-2021 10:09:27 INFO  LoginPage :65 - PASSED ***** : Verify user able to place order in Open Cart application
+28-09-2021 09:09:18 INFO  LoginPage :57 - FAILED ***** : Verify user able to place order in Open Cart application
+28-09-2021 09:09:36 INFO  LoginPage :61 - Exception occured while capture screenshot : java.lang.NullPointerException
+28-09-2021 09:09:724 INFO  LoginPage :57 - FAILED ***** : Verify user able to place order in Open Cart application
+28-09-2021 09:09:880 INFO  LoginPage :57 - FAILED ***** : Verify user able to place order in Open Cart application
+28-09-2021 09:09:168 INFO  LoginPage :57 - FAILED ***** : Verify user able to place order in Open Cart application
+28-09-2021 09:09:801 INFO  LoginPage :57 - FAILED ***** : Verify user able to place order in Open Cart application

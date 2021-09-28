@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import qa.jtaf.serenity.steps.AccountPageStep;
+import qa.jtaf.serenity.steps.CheckoutPageStep;
 import qa.jtaf.serenity.steps.HomePageStep;
 import qa.jtaf.serenity.steps.LoginPageStep;
 import qa.jtaf.serenity.steps.ProductDetailPageStep;
@@ -26,6 +27,9 @@ public class OpenCartStepDefinitions {
 
 	@Steps
 	ShoppingCartPageStep shoppingCartPageStep;
+
+	@Steps
+	CheckoutPageStep checkoutPageStep;
 
 	@Given("user is on Open Cart home page")
 	public void user_is_on_open_cart_home_page() {
@@ -95,17 +99,22 @@ public class OpenCartStepDefinitions {
 
 	@When("user navigate to Open Cart checkout page")
 	public void user_navigate_to_open_cart_checkout_page() {
-
+		shoppingCartPageStep.verifyNavToCheckout();
 	}
 
 	@When("user enters the checkout billing, delivery, payment details {string} and place order")
-	public void user_enters_the_checkout_billing_delivery_payment_details_and_place_order(String string) {
-
+	public void user_enters_the_checkout_billing_delivery_payment_details_and_place_order(String billingData) {
+		checkoutPageStep.verifyCheckoutPageOpen();
+		checkoutPageStep.verifyAddBillingDetails(billingData);
+		checkoutPageStep.verifyAddDeliveryDetails();
+		checkoutPageStep.verifyAddDeliveryMethodDetails();
+		checkoutPageStep.verifyAddPaymentMethodDetails();
+		checkoutPageStep.verifyProductDetailsAndPlaceOrder();
 	}
 
 	@Then("place order success message should display")
 	public void place_order_success_message_should_display() {
-
+		checkoutPageStep.verifyPalceOrderSuccess();
 	}
 
 }

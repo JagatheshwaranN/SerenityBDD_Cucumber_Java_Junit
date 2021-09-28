@@ -21,4 +21,4 @@ Feature: Place Order Functionality
 
     Examples: 
       | username     | password     | product     | checkoutDetails |
-      | app.username | app.password | item.search |                 |
+      | app.username | app.password | item.search | billing.details |

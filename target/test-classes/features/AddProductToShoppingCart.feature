@@ -15,6 +15,7 @@ Feature: Shopping Cart Functionality
     When user navigate to Open Cart shopping cart page from product view drop
     Then Open Cart shopping cart page should open
     And user verify the product details in shopping cart
+    And user remove the product from shopping cart
 
     Examples: 
       | username     | password     | product     |

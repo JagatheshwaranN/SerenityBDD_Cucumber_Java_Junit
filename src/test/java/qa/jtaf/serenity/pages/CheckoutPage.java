@@ -11,7 +11,10 @@ public class CheckoutPage extends PageObject {
 
 	@FindBy(xpath = "//h1[text()='Checkout']")
 	WebElement CheckoutTitle;
-
+	
+	@FindBy(xpath = "//input[@name='payment_address' and @value='new']")
+	WebElement EnterNewBillingAddressRadioButton;
+	
 	@FindBy(id = "input-payment-firstname")
 	WebElement BillingFirstName;
 
@@ -39,10 +42,10 @@ public class CheckoutPage extends PageObject {
 	@FindBy(xpath = "//input[@id='button-payment-address']")
 	WebElement BillingDetailsContinue;
 
-	@FindBy(id = "shipping-existing")
+	@FindBy(xpath = "//div[@id='shipping-existing']")
 	WebElement DeliveryExistingAddressSection;
 
-	@FindBy(id = "button-shipping-address")
+	@FindBy(xpath = "//input[@id='button-shipping-address']")
 	WebElement DeliveryDetailsContinue;
 
 	@FindBy(xpath = "//div[@id='collapse-shipping-method']//div[@class='radio']//label")
@@ -51,7 +54,7 @@ public class CheckoutPage extends PageObject {
 	@FindBy(name = "comment")
 	WebElement OrderComments;
 
-	@FindBy(id = "button-shipping-method")
+	@FindBy(xpath = "//input[@id='button-shipping-method']")
 	WebElement DeliveryMethodContinue;
 
 	@FindBy(xpath = "//div[@id='collapse-payment-method']//div[@class='radio']//label")
@@ -60,13 +63,13 @@ public class CheckoutPage extends PageObject {
 	@FindBy(xpath = "//input[@type='checkbox' and @name='agree']")
 	WebElement TermsAndConditions;
 
-	@FindBy(id = "button-payment-method")
+	@FindBy(xpath = "//input[@id='button-payment-method']")
 	WebElement PaymentMethodContinue;
 
 	@FindBy(xpath = "//div[@class='table-responsive']")
 	WebElement ProductDetailsSection;
 
-	@FindBy(id = "button-confirm")
+	@FindBy(xpath = "//input[@id='button-confirm']")
 	WebElement ConfirmOrder;
 
 	@FindBy(xpath = "//div[@id='content']//h1[text()='Your order has been placed!']")
@@ -81,6 +84,8 @@ public class CheckoutPage extends PageObject {
 
 	public void enterBillingDetails(String billingDetails) {
 		String[] billingData = FileReaderUtility.getTestData(billingDetails).split(",");
+		shouldBeVisible(EnterNewBillingAddressRadioButton);
+		clickOn(EnterNewBillingAddressRadioButton);
 		shouldBeVisible(BillingFirstName);
 		typeInto(BillingFirstName, billingData[0]);
 		typeInto(BillingLasttName, billingData[1]);
@@ -89,11 +94,12 @@ public class CheckoutPage extends PageObject {
 		typeInto(BillingCity, billingData[4]);
 		typeInto(BillingPostCode, billingData[5]);
 		selectFromDropdown(BillingCountry, billingData[6]);
-		selectFromDropdown(BillingCountry, billingData[7]);
+		selectFromDropdown(BillingRegion, billingData[7]);
+		clickOn(BillingDetailsContinue);
 	}
 	
 	public void enterDeliveryDetails() {
-		shouldBeVisible(DeliveryExistingAddressSection);
+		//shouldBeVisible(DeliveryExistingAddressSection);
 		clickOn(DeliveryDetailsContinue);
 	}
 	
@@ -109,7 +115,7 @@ public class CheckoutPage extends PageObject {
 		clickOn(PaymentMethodContinue);
 	}
 	
-	public void validateCheckoutProductDetails() {
+	public void validateCheckoutProductDetailsAndPlaceOrder() {
 		shouldBeVisible(ProductDetailsSection);
 		clickOn(ConfirmOrder);
 	}

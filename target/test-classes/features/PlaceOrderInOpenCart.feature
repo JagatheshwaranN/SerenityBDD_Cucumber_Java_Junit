@@ -15,11 +15,10 @@ Feature: Place Order Functionality
     When user navigate to Open Cart shopping cart page from product view drop
     Then Open Cart shopping cart page should open
     And user verify the product details in shopping cart
-    And user remove product from shopping cart
     When user navigate to Open Cart checkout page
     And user enters the checkout billing, delivery, payment details "<checkoutDetails>" and place order
     Then place order success message should display
 
     Examples: 
       | username     | password     | product     | checkoutDetails |
-      | app.username | app.password | item.search |                 |
+      | app.username | app.password | item.search | billing.details |
