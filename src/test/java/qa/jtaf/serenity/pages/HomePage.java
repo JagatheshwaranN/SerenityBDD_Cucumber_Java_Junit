@@ -3,6 +3,7 @@ package qa.jtaf.serenity.pages;
 import org.apache.log4j.Logger;
 
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import com.jtaf.qa.utilities.FileReaderUtility;
 import com.jtaf.qa.utilities.LoggerUtility;
@@ -35,6 +36,9 @@ public class HomePage extends PageObject {
 	@FindBy(xpath = "//div[@id='content']//h1[contains(text(),'Search')]")
 	WebElement SearchResultHeader;
 	
+	@FindBy(xpath = "//label[@for='input-search']")
+	WebElement SearchCriteria;
+		
 	@FindBy(xpath = "//div[@class='product-thumb']")
 	WebElement ProductSection;
 	
@@ -64,10 +68,12 @@ public class HomePage extends PageObject {
 	}
 	
 	public void navigateToLoginPage() {
+		Assert.assertEquals(getTitle().trim(), FileReaderUtility.getTestData("home.page.title"));
 		shouldBeVisible(OpenCartLogo);
 		shouldBeVisible(MyAccountFlyout);
 		clickOn(MyAccountFlyout);
 		clickOn(LoginFlyout);
+		Assert.assertEquals(getTitle().trim(), FileReaderUtility.getTestData("login.page.title"));	
 	}
 
 	public void searchProduct(String product) {
@@ -76,11 +82,13 @@ public class HomePage extends PageObject {
 		clickOn(SearchButton);
 		shouldBeVisible(SearchResultHeader);
 		shouldBeVisible(ProductSection);
+		Assert.assertEquals(SearchCriteria.getText().trim(), FileReaderUtility.getTestData("search.result"));
 	}
 	
 	public void productAddToCart() {
 		shouldBeVisible(ProductSection);
-		clickOn(AddToCartButton);	
+		clickOn(AddToCartButton);
+		Assert.assertEquals(getDriver().getCurrentUrl().contains(FileReaderUtility.getTestData("porduct.page.url")),true);
 	}
 	
 	

@@ -1,6 +1,7 @@
 package qa.jtaf.serenity.pages;
 
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import com.jtaf.qa.utilities.FileReaderUtility;
 
@@ -42,7 +43,7 @@ public class CheckoutPage extends PageObject {
 	@FindBy(xpath = "//input[@id='button-payment-address']")
 	WebElement BillingDetailsContinue;
 
-	@FindBy(xpath = "//div[@id='shipping-existing']")
+	@FindBy(xpath = "//div[@id='collapse-shipping-address']//select[@name='address_id']")
 	WebElement DeliveryExistingAddressSection;
 
 	@FindBy(xpath = "//input[@id='button-shipping-address']")
@@ -99,25 +100,31 @@ public class CheckoutPage extends PageObject {
 	}
 	
 	public void enterDeliveryDetails() {
-		//shouldBeVisible(DeliveryExistingAddressSection);
+		waitFor(DeliveryExistingAddressSection);
+		shouldBeVisible(DeliveryExistingAddressSection);
 		clickOn(DeliveryDetailsContinue);
 	}
 	
 	public void enterDeliveryMethodDetails() {
+		waitFor(DeliveryCharge);
 		shouldBeVisible(DeliveryCharge);
 		typeInto(OrderComments, "Pack Safely");
 		clickOn(DeliveryMethodContinue);
 	}
 	
 	public void enterPaymentMethodDetails() {
+		waitFor(CashOnDelivery);
 		shouldBeVisible(CashOnDelivery);
 		clickOn(TermsAndConditions);
 		clickOn(PaymentMethodContinue);
 	}
 	
 	public void validateCheckoutProductDetailsAndPlaceOrder() {
+		waitFor(ProductDetailsSection);
 		shouldBeVisible(ProductDetailsSection);
 		clickOn(ConfirmOrder);
+		waitForTitleToAppear(FileReaderUtility.getTestData("place.order.page.title"));
+		Assert.assertEquals(getTitle().trim(), FileReaderUtility.getTestData("place.order.page.title"));	
 	}
 	
 	public void validatePlaceOrderSuccess() {

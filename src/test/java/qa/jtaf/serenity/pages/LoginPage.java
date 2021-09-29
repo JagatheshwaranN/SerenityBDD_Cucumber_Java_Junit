@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import com.jtaf.qa.utilities.FileReaderUtility;
 import com.jtaf.qa.utilities.LoggerUtility;
@@ -38,10 +39,11 @@ public class LoginPage extends PageObject {
 	}
 	
 	public void doLogin(String userName, String passWord) {
-		shouldBeVisible(LoginHeader);
+		shouldBeVisible(UserEmail);
 		typeInto(UserEmail, FileReaderUtility.getTestData(userName));
 		typeInto(Password, FileReaderUtility.getTestData(passWord));
 		clickOn(LoginButton);
+		Assert.assertEquals(getTitle().trim(), FileReaderUtility.getTestData("account.page.title"));	
 	}
 	
 	@Before

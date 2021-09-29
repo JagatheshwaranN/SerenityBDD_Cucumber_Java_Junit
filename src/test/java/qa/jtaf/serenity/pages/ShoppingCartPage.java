@@ -1,6 +1,9 @@
 package qa.jtaf.serenity.pages;
 
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import com.jtaf.qa.utilities.FileReaderUtility;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
@@ -78,6 +81,7 @@ public class ShoppingCartPage extends PageObject {
 	public void navigateToCheckoutPage() {
 		shouldBeVisible(CheckoutButton);
 		clickOn(CheckoutButton);
+		Assert.assertEquals(getTitle().trim(), FileReaderUtility.getTestData("checkout.page.title"));
 	}
 
 }

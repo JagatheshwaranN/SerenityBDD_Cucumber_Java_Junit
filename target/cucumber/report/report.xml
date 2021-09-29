@@ -1,17 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="38.068">
-<testcase classname="Shopping Cart Functionality" name="Verify user able to place order in Open Cart application" time="36.773">
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="28.492">
+<testcase classname="Login Functionality" name="Verify user able to login to Open Cart application" time="25.601">
 <system-out><![CDATA[Given user is on Open Cart home page........................................passed
 When user navigate to Open Cart login page from MyAccount flyout............passed
 And user login with username "app.username" and password "app.password".....passed
 Then Open Cart account page should open.....................................passed
-And user navigate to Open Cart home page from account page..................passed
-And user search for product "item.search"...................................passed
-When user clicks Add to cart button.........................................passed
-Then Open Cart product detail page should open..............................passed
-And user add product to shopping cart.......................................passed
-When user navigate to Open Cart shopping cart page from product view drop...passed
-Then Open Cart shopping cart page should open...............................passed
-And user verify the product details in shopping cart........................passed
 ]]></system-out>
 </testcase>
 </testsuite>

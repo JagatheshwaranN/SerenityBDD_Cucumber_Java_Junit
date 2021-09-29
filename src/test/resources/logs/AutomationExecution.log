@@ -21,3 +21,6 @@
 28-09-2021 09:09:168 INFO  LoginPage :57 - FAILED ***** : Verify user able to place order in Open Cart application
 28-09-2021 09:09:801 INFO  LoginPage :57 - FAILED ***** : Verify user able to place order in Open Cart application
 28-09-2021 10:09:229 INFO  LoginPage :65 - PASSED ***** : Verify user able to place order in Open Cart application
+29-09-2021 09:09:472 INFO  LoginPage :65 - PASSED ***** : Verify user able to login to Open Cart application
+29-09-2021 10:09:940 INFO  LoginPage :59 - FAILED ***** : Verify user able to place order in Open Cart application
+29-09-2021 10:09:610 INFO  LoginPage :67 - PASSED ***** : Verify user able to place order in Open Cart application

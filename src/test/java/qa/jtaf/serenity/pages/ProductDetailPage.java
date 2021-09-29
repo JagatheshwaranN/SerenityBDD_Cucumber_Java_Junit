@@ -2,6 +2,9 @@ package qa.jtaf.serenity.pages;
 
 
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import com.jtaf.qa.utilities.FileReaderUtility;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
@@ -58,6 +61,8 @@ public class ProductDetailPage extends PageObject {
 		shouldBeVisible(AddToCartButton);
 		clickOn(AddToCartButton);
 		shouldBeVisible(AddToCartSuccessMessage);
+		Assert.assertEquals(AddToCartSuccessMessage.getText().contains(FileReaderUtility.getTestData("add.to.cart.message")),true);
+		
 	}
 
 	public void navigateToShoppingCartPage() {
@@ -66,6 +71,7 @@ public class ProductDetailPage extends PageObject {
 		shouldBeVisible(ShoppingCartViewDrop);
 		shouldBeVisible(ViewCartButton);
 		clickOn(ViewCartButton);
+		Assert.assertEquals(getTitle().trim(), FileReaderUtility.getTestData("cart.page.title"));
 	}
 
 }
